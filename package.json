@@ -14,6 +14,7 @@
   "author": "Chris Gonzalez",
   "license": "MIT",
   "dependencies": {
+    "cron": "^1.7.2",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "twilio": "^3.35.0"
