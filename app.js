@@ -28,5 +28,6 @@ let sendText = new cronJob(
     );
   },
   null,
-  true
+  true,
+  ""
 );
