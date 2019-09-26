@@ -5,6 +5,8 @@ const affirmations = [
   "You are my heart and soul"
 ];
 
-export function getAffirmation(affirmations) {
+const getAffirmation = affirmations => {
   return affirmations[Math.floor(Math.random() * affirmations.length)];
-}
+};
+
+export default getAffirmation;
