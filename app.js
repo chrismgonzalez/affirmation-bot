@@ -6,21 +6,23 @@ const authToken = process.env.TWILIO_ACCOUNT_AUTHTOKEN;
 const client = new twilio(accountSid, authToken);
 const cronJob = require("cron").CronJob;
 
-/* //todo:
-call a function to generate the body of the text message from an array of messages
+const affirmations = [
+  "You are beautiful",
+  "You look beautiful today",
+  "I love you so much!",
+  "You are my heart and soul"
+];
 
-use the return value of the function as the template literal value for the body of the text message
-
-
-
-*/
+function getAffirmation() {
+  return affirmations[Math.floor(Math.random() * affirmations.length)];
+}
 
 let sendText = new cronJob(
-  "45 14 * * *",
+  "20 21 * * *",
   function() {
     client.messages.create(
       {
-        body: "The CRON job worked!",
+        body: getAffirmation(affirmations),
         from: `${process.env.TWILIO_PHONE_NUMBER}`,
         to: `${process.env.DESTINATION_PHONE_NUMBER}`
       },

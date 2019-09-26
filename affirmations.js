@@ -1,4 +1,4 @@
-const affirmations = [
+export const affirmations = [
   "You are beautiful",
   "You look beautiful today",
   "I love you so much!",
